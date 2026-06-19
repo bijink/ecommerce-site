@@ -5,7 +5,7 @@ import ProductOverview from '../../../components/ProductOverview';
 import { Product } from '../../../types/global.type';
 import { axiosInstance } from '../../../utils/axios';
 
-export const Route = createFileRoute('/admin/product/$productId')({
+export const Route = createFileRoute('/admin/product_/$productId')({
   loader: ({ params: { productId } }) => {
     if (!/^[a-fA-F0-9]{24}$/.test(productId)) throw notFound();
   },

@@ -12,7 +12,7 @@ import { Product } from '../../../types/global.type';
 import { axiosInstance } from '../../../utils/axios';
 import stringOps from '../../../utils/stringOps';
 
-export const Route = createFileRoute('/admin/product/add')({
+export const Route = createFileRoute('/admin/product_/add')({
   component: ProductAddComponent,
 });
 
