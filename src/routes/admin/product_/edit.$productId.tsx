@@ -35,7 +35,7 @@ const productsQueryOptions = (productId: string) => {
   });
 };
 
-export const Route = createFileRoute('/admin/product/edit/$productId')({
+export const Route = createFileRoute('/admin/product_/edit/$productId')({
   loader: ({ params: { productId } }) =>
     queryClient.ensureQueryData(productsQueryOptions(productId)),
   pendingComponent: PageLoadingIndicator,
