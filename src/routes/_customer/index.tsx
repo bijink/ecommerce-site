@@ -30,8 +30,11 @@ const productsQueryOptions = (page = 1) => {
 };
 
 export const Route = createFileRoute('/_customer/')({
-  loaderDeps: ({ search: { page } }: { search: { page: number } }) => ({
-    page: isNaN(page) ? 1 : page,
+  validateSearch: (search: Record<string, unknown>): { page?: number } => ({
+    page: Number(search?.page ?? 1) || 1,
+  }),
+  loaderDeps: ({ search: { page = 1 } }) => ({
+    page,
   }),
   loader: ({ deps: { page } }) => queryClient.ensureQueryData(productsQueryOptions(page)),
   pendingComponent: PageLoadingIndicator,
@@ -43,7 +46,7 @@ export const Route = createFileRoute('/_customer/')({
 function HomeComponent() {
   const page = useSearch({
     from: '/_customer/',
-    select: (search: { page: number }) => (isNaN(search.page) ? 1 : search.page),
+    select: (search: { page?: number }) => search.page ?? 1,
   });
   const {
     data: { products, length },
