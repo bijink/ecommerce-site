@@ -1,7 +1,7 @@
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import { useQueryClient } from '@tanstack/react-query';
-import { useLocation, useNavigate } from '@tanstack/react-router';
+import { useNavigate } from '@tanstack/react-router';
 import Cookies from 'js-cookie';
 
 export default function SignoutConfirmation({
@@ -11,10 +11,7 @@ export default function SignoutConfirmation({
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-  const pathname = useLocation({
-    select: (location) => location.pathname,
-  });
-  const navigate = useNavigate({ from: pathname });
+  const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   const handleSignout = () => {

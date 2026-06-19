@@ -11,7 +11,7 @@ export default function Pagination({
   productsLength: number;
   page: number;
 }) {
-  const navigate = useNavigate();
+  const navigate = useNavigate({ from: '/' });
   const queryClient = useQueryClient();
 
   return (
