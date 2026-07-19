@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "destination": "https://www.linkedin.com/posts/bijink_webdevelopment-ecommerce-selftaught-activity-7274779777918509056-0AC0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGQdcgB1s1PCFOjxT4U-Dqe_-GCdwZi7lA",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "destination": "https://www.linkedin.com/posts/bijink_webdevelopment-ecommerce-selftaught-activity-7274779777918509056-0AC0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADGQdcgB1s1PCFOjxT4U-Dqe_-GCdwZi7lA",
       "permanent": true
